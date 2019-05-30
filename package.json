@@ -1,6 +1,6 @@
 {
-    "name": "ngxsmoothdnd",
-    "version": "0.3.1",
+    "name": "ngx-smooth-dnd",
+    "version": "0.3.2",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
