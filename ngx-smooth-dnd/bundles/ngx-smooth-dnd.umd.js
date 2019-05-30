@@ -1,8 +1,9 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/core'), require('smooth-dnd')) :
-    typeof define === 'function' && define.amd ? define('ngx-smooth-dnd', ['exports', '@angular/common', '@angular/core', 'smooth-dnd'], factory) :
-    (factory((global['ngx-smooth-dnd'] = {}),global.ng.common,global.ng.core,global.SmoothDnD));
-}(this, (function (exports,common,core,smoothDnd) { 'use strict';
+        typeof define === 'function' && define.amd ? define('ngx-smooth-dnd', ['exports', '@angular/common', '@angular/core', 'smooth-dnd'], factory) :
+            (factory((global['ngx-smooth-dnd'] = {}), global.ng.common, global.ng.core, global.SmoothDnD));
+}(this, (function (exports, common, core, smoothDnd) {
+    'use strict';
 
     var smoothDnd__default = 'default' in smoothDnd ? smoothDnd['default'] : smoothDnd;
 
@@ -26,11 +27,13 @@
                 this.wrapper.nativeElement.parentNode.className = smoothDnd.constants.wrapperClass;
             };
         DraggableComponent.decorators = [
-            { type: core.Component, args: [{
-                        // tslint:disable-next-line:component-selector
-                        selector: 'smooth-dnd-draggable',
-                        template: "<ng-container #draggableWrapper>\r\n    <ng-content></ng-content>\r\n</ng-container>"
-                    }] }
+            {
+                type: core.Component, args: [{
+                    // tslint:disable-next-line:component-selector
+                    selector: 'smooth-dnd-draggable',
+                    template: "<ng-container #draggableWrapper>\r\n    <ng-content></ng-content>\r\n</ng-container>"
+                }]
+            }
         ];
         DraggableComponent.propDecorators = {
             wrapper: [{ type: core.ViewChild, args: ['draggableWrapper',] }]
@@ -162,11 +165,13 @@
                 });
             };
         ContainerComponent.decorators = [
-            { type: core.Component, args: [{
-                        // tslint:disable-next-line:component-selector
-                        selector: "smooth-dnd-container",
-                        template: "<div #container>\r\n    <ng-content></ng-content>\r\n</div>"
-                    }] }
+            {
+                type: core.Component, args: [{
+                    // tslint:disable-next-line:component-selector
+                    selector: "smooth-dnd-container",
+                    template: "<div #container>\r\n    <ng-content></ng-content>\r\n</div>"
+                }]
+            }
         ];
         /** @nocollapse */
         ContainerComponent.ctorParameters = function () {
@@ -212,11 +217,13 @@
         function NgxSmoothDnDModule() {
         }
         NgxSmoothDnDModule.decorators = [
-            { type: core.NgModule, args: [{
-                        imports: [common.CommonModule],
-                        declarations: [ContainerComponent, DraggableComponent],
-                        exports: [ContainerComponent, DraggableComponent]
-                    },] }
+            {
+                type: core.NgModule, args: [{
+                    imports: [common.CommonModule],
+                    declarations: [ContainerComponent, DraggableComponent],
+                    exports: [ContainerComponent, DraggableComponent]
+                },]
+            }
         ];
         return NgxSmoothDnDModule;
     }());

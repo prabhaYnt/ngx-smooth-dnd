@@ -16,11 +16,13 @@ class DraggableComponent {
     }
 }
 DraggableComponent.decorators = [
-    { type: Component, args: [{
-                // tslint:disable-next-line:component-selector
-                selector: 'smooth-dnd-draggable',
-                template: "<ng-container #draggableWrapper>\r\n    <ng-content></ng-content>\r\n</ng-container>"
-            }] }
+    {
+        type: Component, args: [{
+            // tslint:disable-next-line:component-selector
+            selector: 'smooth-dnd-draggable',
+            template: "<ng-container #draggableWrapper>\r\n    <ng-content></ng-content>\r\n</ng-container>"
+        }]
+    }
 ];
 DraggableComponent.propDecorators = {
     wrapper: [{ type: ViewChild, args: ['draggableWrapper',] }]
@@ -80,8 +82,7 @@ class ContainerComponent {
             options.dragBeginDelay = this.dragBeginDelay;
         if (this.animationDuration)
             options.animationDuration = this.animationDuration;
-        if (this.autoScrollEnabled)
-            options.autoScrollEnabled = this.autoScrollEnabled;
+        options.autoScrollEnabled = this.autoScrollEnabled;
         if (this.dragClass)
             options.dragClass = this.dragClass;
         if (this.dropClass)
@@ -138,11 +139,13 @@ class ContainerComponent {
     }
 }
 ContainerComponent.decorators = [
-    { type: Component, args: [{
-                // tslint:disable-next-line:component-selector
-                selector: "smooth-dnd-container",
-                template: "<div #container>\r\n    <ng-content></ng-content>\r\n</div>"
-            }] }
+    {
+        type: Component, args: [{
+            // tslint:disable-next-line:component-selector
+            selector: "smooth-dnd-container",
+            template: "<div #container>\r\n    <ng-content></ng-content>\r\n</div>"
+        }]
+    }
 ];
 /** @nocollapse */
 ContainerComponent.ctorParameters = () => [
@@ -183,11 +186,13 @@ ContainerComponent.propDecorators = {
 class NgxSmoothDnDModule {
 }
 NgxSmoothDnDModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [CommonModule],
-                declarations: [ContainerComponent, DraggableComponent],
-                exports: [ContainerComponent, DraggableComponent]
-            },] }
+    {
+        type: NgModule, args: [{
+            imports: [CommonModule],
+            declarations: [ContainerComponent, DraggableComponent],
+            exports: [ContainerComponent, DraggableComponent]
+        },]
+    }
 ];
 
 /**

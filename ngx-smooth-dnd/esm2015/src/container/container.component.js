@@ -67,8 +67,7 @@ export class ContainerComponent {
             options.dragBeginDelay = this.dragBeginDelay;
         if (this.animationDuration)
             options.animationDuration = this.animationDuration;
-        if (this.autoScrollEnabled)
-            options.autoScrollEnabled = this.autoScrollEnabled;
+        options.autoScrollEnabled = this.autoScrollEnabled;
         if (this.dragClass)
             options.dragClass = this.dragClass;
         if (this.dropClass)
@@ -125,11 +124,13 @@ export class ContainerComponent {
     }
 }
 ContainerComponent.decorators = [
-    { type: Component, args: [{
-                // tslint:disable-next-line:component-selector
-                selector: "smooth-dnd-container",
-                template: "<div #container>\r\n    <ng-content></ng-content>\r\n</div>"
-            }] }
+    {
+        type: Component, args: [{
+            // tslint:disable-next-line:component-selector
+            selector: "smooth-dnd-container",
+            template: "<div #container>\r\n    <ng-content></ng-content>\r\n</div>"
+        }]
+    }
 ];
 /** @nocollapse */
 ContainerComponent.ctorParameters = () => [
